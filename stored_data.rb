@@ -72,7 +72,6 @@ private
     size = append_size(chunks_for(data)).each_with_index.map do |chunk, n|
       client.set(chunk_key(n), chunk)
     end.size
-    client.set("#{url}size", size)
   end
 
   def chunks_for(data)
